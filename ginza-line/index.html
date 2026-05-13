@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>銀座線 駅メロ</title>
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+  <div class="bg-image"></div>
+
+  <main class="container">
+
+    <!-- 路線タイトル -->
+    <div class="line-title">
+
+      <img
+        src="icons/ginza.png"
+        class="line-icon"
+      >
+
+      <h1>銀座線</h1>
+
+    </div>
+
+
+
+
+
+    <!-- G01 渋谷 -->
+    <section class="station-card">
+
+      <h2 class="station-name">
+        G01 渋谷
+      </h2>
+
+      <div class="melody-item">
+
+        <div class="melody-title">
+          B : 道はここから
+        </div>
+
+        <div class="button-group">
+
+          <button onclick="playMusic('audio/G01B1.mp3')">
+            再生
+          </button>
+
+          <button onclick="stopMusic()">
+            停止
+          </button>
+
+        </div>
+
+      </div>
+
+      <div class="melody-item">
+
+        <div class="melody-title">
+          B : アンディーン
+        </div>
+
+        <div class="button-group">
+
+          <button onclick="playMusic('audio/G01B2.mp3')">
+            再生
+          </button>
+
+          <button onclick="stopMusic()">
+            停止
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+
+
+    <!-- G02 表参道 -->
+    <section class="station-card">
+
+      <h2 class="station-name">
+        G02 表参道
+      </h2>
+
+      <div class="melody-item">
+
+        <div class="melody-title">
+          A : 永遠に続く道
+        </div>
+
+        <div class="button-group">
+
+          <button onclick="playMusic('audio/G02A1.mp3')">
+            再生
+          </button>
+
+          <button onclick="stopMusic()">
+            停止
+          </button>
+
+        </div>
+
+      </div>
+
+      <div class="melody-item">
+
+        <div class="melody-title">
+          B : 早瀬
+        </div>
+
+        <div class="button-group">
+
+          <button onclick="playMusic('audio/G02B1.mp3')">
+            再生
+          </button>
+
+          <button onclick="stopMusic()">
+            停止
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+
+
+    <!-- G03 外苑前 -->
+    <section class="station-card">
+
+      <h2 class="station-name">
+        G03 外苑前
+      </h2>
+
+      <div class="melody-item">
+
+        <div class="melody-title">
+          A : ようこそ！
+        </div>
+
+        <div class="button-group">
+
+          <button onclick="playMusic('audio/G03A1.mp3')">
+            再生
+          </button>
+
+          <button onclick="stopMusic()">
+            停止
+          </button>
+
+        </div>
+
+      </div>
+
+      <div class="melody-item">
+
+        <div class="melody-title">
+          B : Ready To Go
+        </div>
+
+        <div class="button-group">
+
+          <button onclick="playMusic('audio/G03B1.mp3')">
+            再生
+          </button>
+
+          <button onclick="stopMusic()">
+            停止
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+
+
+    <!-- G04 青山一丁目 -->
+    <section class="station-card">
+
+      <h2 class="station-name">
+        G04 青山一丁目
+      </h2>
+
+      <div class="melody-item">
+
+        <div class="melody-title">
+          A : いつかきっと
+        </div>
+
+        <div class="button-group">
+
+          <button onclick="playMusic('audio/G04A1.mp3')">
+            再生
+          </button>
+
+          <button onclick="stopMusic()">
+            停止
+          </button>
+
+        </div>
+
+      </div>
+
+      <div class="melody-item">
+
+        <div class="melody-title">
+          B : コンシェルジュ
+        </div>
+
+        <div class="button-group">
+
+          <button onclick="playMusic('audio/G04B1.mp3')">
+            再生
+          </button>
+
+          <button onclick="stopMusic()">
+            停止
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+
+
+    <!-- G05 赤坂見附 -->
+    <section class="station-card">
+
+      <h2 class="station-name">
+        G05 赤坂見附
+      </h2>
+
+      <div class="melody-item">
+
+        <div class="melody-title">
+          A : 星を探して
+        </div>
+
+        <div class="button-group">
+
+          <button onclick="playMusic('audio/G05A1.mp3')">
+            再生
+          </button>
+
+          <button onclick="stopMusic()">
+            停止
+          </button>
+
+        </div>
+
+      </div>
+
+      <div class="melody-item">
+
+        <div class="melody-title">
+          B : オレンジピール
+        </div>
+
+        <div class="button-group">
+
+          <button onclick="playMusic('audio/G05B1.mp3')">
+            再生
+          </button>
+
+          <button onclick="stopMusic()">
+            停止
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+
+
+    <!-- G06 溜池山王 -->
+    <section class="station-card">
+
+      <h2 class="station-name">
+        G06 溜池山王
+      </h2>
+
+      <div class="melody-item">
+
+        <div class="melody-title">
+          A : オリジナル曲
+        </div>
+
+        <div class="button-group">
+
+          <button onclick="playMusic('audio/G06A1.mp3')">
+            再生
+          </button>
+
+          <button onclick="stopMusic()">
+            停止
+          </button>
+
+        </div>
+
+      </div>
+
+      <div class="melody-item">
+
+        <div class="melody-title">
+          B : オリジナル曲
+        </div>
+
+        <div class="button-group">
+
+          <button onclick="playMusic('audio/G06B1.mp3')">
+            再生
+          </button>
+
+          <button onclick="stopMusic()">
+            停止
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+
+
+    <!-- G07 虎ノ門 -->
+    <section class="station-card">
+
+      <h2 class="station-name">
+        G07 虎ノ門
+      </h2>
+
+      <div class="melody-item">
+
+        <div class="melody-title">
+          A : シトラスの香り
+        </div>
+
+        <div class="button-group">
+
+          <button onclick="playMusic('audio/G07A1.mp3')">
+            再生
+          </button>
+
+          <button onclick="stopMusic()">
+            停止
+          </button>
+
+        </div>
+
+      </div>
+
+      <div class="melody-item">
+
+        <div class="melody-title">
+          B : 玉紫陽花
+        </div>
+
+        <div class="button-group">
+
+          <button onclick="playMusic('audio/G07B1.mp3')">
+            再生
+          </button>
+
+          <button onclick="stopMusic()">
+            停止
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+
+
+    <!-- G08 新橋 -->
+    <section class="station-card">
+
+      <h2 class="station-name">
+        G08 新橋
+      </h2>
+
+      <div class="melody-item">
+
+        <div class="melody-title">
+          A : スタートライン
+        </div>
+
+        <div class="button-group">
+
+          <button onclick="playMusic('audio/G08A1.mp3')">
+            再生
+          </button>
+
+          <button onclick="stopMusic()">
+            停止
+          </button>
+
+        </div>
+
+      </div>
+
+      <div class="melody-item">
+
+        <div class="melody-title">
+          B : Fast River
+        </div>
+
+        <div class="button-group">
+
+          <button onclick="playMusic('audio/G08B1.mp3')">
+            再生
+          </button>
+
+          <button onclick="stopMusic()">
+            停止
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+
+
+    <!-- G09 銀座 -->
+    <section class="station-card">
+
+      <h2 class="station-name">
+        G09 銀座
+      </h2>
+
+      <div class="melody-item">
+
+        <div class="melody-title">
+          A : 銀座カンカン娘
+        </div>
+
+        <div class="button-group">
+
+          <button onclick="playMusic('audio/G09A1.mp3')">
+            再生
+          </button>
+
+          <button onclick="stopMusic()">
+            停止
+          </button>
+
+        </div>
+
+      </div>
+
+      <div class="melody-item">
+
+        <div class="melody-title">
+          B : 銀座カンカン娘
+        </div>
+
+        <div class="button-group">
+
+          <button onclick="playMusic('audio/G09B1.mp3')">
+            再生
+          </button>
+
+          <button onclick="stopMusic()">
+            停止
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
