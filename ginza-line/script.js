@@ -1,20 +1,33 @@
-let currentAudio = null;
+const player =
+  document.getElementById("audio-player");
 
 function playMusic(file){
 
-  stopMusic();
+  // 同じ曲なら一回停止
+  if(player.src.includes(file)){
 
-  currentAudio = new Audio(file);
+    player.pause();
+    player.currentTime = 0;
+  }
 
-  currentAudio.play();
+  // 新しい曲設定
+  player.src = file;
+
+  // 再生
+  player.play()
+    .catch(error => {
+
+      console.log(
+        "再生エラー:",
+        error
+      );
+
+    });
 }
 
 function stopMusic(){
 
-  if(currentAudio){
+  player.pause();
 
-    currentAudio.pause();
-
-    currentAudio.currentTime = 0;
-  }
+  player.currentTime = 0;
 }
