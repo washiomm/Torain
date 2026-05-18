@@ -839,164 +839,143 @@
     </section>
 </main>
 
-  <!-- 下部固定プレイヤー -->
-  <div class="music-bar">
+ <!-- プレイヤー -->
+<div class="player-container">
 
-    <div class="music-left">
+  <div class="now-playing" id="nowPlaying">
+    駅を選択してください
+  </div>
 
-      <div class="playing-label">
-       再生中の音楽
-      </div>
+  <audio id="player"></audio>
 
-      <div
-        class="now-playing"
-        id="nowPlaying"
-      >
-        再生されていません
-      </div>
+  <div class="player-controls">
 
-    </div>
+    <button id="restartBtn">
+      ⏪
+    </button>
 
-
-
-
-
-    <div class="music-right">
-
-      <!-- ループ -->
-      <label class="loop-wrap">
-
-        <input
-          type="checkbox"
-          id="loopToggle"
-        >
-
-        ループ
-
-      </label>
-
-
-
-
-
-      <!-- シークバー -->
-      <input
-        type="range"
-        id="seekBar"
-        value="0"
-        min="0"
-        max="100"
-      >
-
-    </div>
+    <button id="pauseBtn">
+      ▶
+    </button>
 
   </div>
 
+</div>
 
+<script>
 
+  const player =
+    document.getElementById(
+      "player"
+    );
 
+  const nowPlaying =
+    document.getElementById(
+      "nowPlaying"
+    );
 
-  <!-- audio -->
-  <audio
-    id="audio-player"
-    preload="auto"
-  ></audio>
+  const pauseBtn =
+    document.getElementById(
+      "pauseBtn"
+    );
 
+  const restartBtn =
+    document.getElementById(
+      "restartBtn"
+    );
 
+  /* 駅ボタン */
 
+  document
+    .querySelectorAll(
+      ".station-card"
+    )
+    .forEach(card => {
 
+      card.addEventListener(
+        "click",
+        () => {
 
-  <script>
+          const audio =
+            card.dataset.audio;
 
-    const player =
-      document.getElementById(
-        "audio-player"
+          const station =
+            card.dataset.station;
+
+          if(!audio) return;
+
+          player.src = audio;
+
+          player.play();
+
+          nowPlaying.textContent =
+            `${station} を再生中`;
+
+          pauseBtn.textContent =
+            "⏸";
+
+        }
       );
 
-    const seekBar =
-      document.getElementById(
-        "seekBar"
-      );
+    });
 
-    const loopToggle =
-      document.getElementById(
-        "loopToggle"
-      );
+  /* 再生 / 一時停止 */
 
-    const nowPlaying =
-      document.getElementById(
-        "nowPlaying"
-      );
+  pauseBtn.addEventListener(
+    "click",
+    () => {
 
+      if(player.paused){
 
+        player.play();
 
+        pauseBtn.textContent =
+          "⏸";
 
+      }else{
 
-    function playMusic(file,name){
+        player.pause();
 
-      player.src = file;
+        pauseBtn.textContent =
+          "▶";
 
-      player.loop =
-        loopToggle.checked;
+      }
 
-      player.play();
-
-      nowPlaying.textContent =
-        name;
     }
+  );
 
+  /* 最初から */
 
-
-
-
-    function stopMusic(){
-
-      player.pause();
+  restartBtn.addEventListener(
+    "click",
+    () => {
 
       player.currentTime = 0;
 
-      nowPlaying.textContent =
-        "再生されていません";
+      player.play();
+
+      pauseBtn.textContent =
+        "⏸";
+
     }
+  );
 
+  /* 再生終了 */
 
+  player.addEventListener(
+    "ended",
+    () => {
 
+      pauseBtn.textContent =
+        "▶";
 
+      nowPlaying.textContent =
+        "再生終了";
 
-    player.addEventListener(
-      "timeupdate",
-      () => {
+    }
+  );
 
-        if(player.duration){
-
-          seekBar.value =
-            (player.currentTime
-            / player.duration)
-            * 100;
-        }
-
-      }
-    );
-
-
-
-
-
-    seekBar.addEventListener(
-      "input",
-      () => {
-
-        if(player.duration){
-
-          player.currentTime =
-            (seekBar.value / 100)
-            * player.duration;
-        }
-
-      }
-    );
-
-  </script>
+</script>
 
 </body>
 </html>
